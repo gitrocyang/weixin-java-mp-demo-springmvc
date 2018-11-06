@@ -3,13 +3,13 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.binarywang</groupId>
-    <artifactId>weixin-java-mp-demo</artifactId>
+    <groupId>com.github.gitrocyang</groupId>
+    <artifactId>weixin-java-sdk-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Weixin MP Demo</name>
     <description>weixin mp demo with spring MVC</description>
-    <url>https://github.com/binarywang/weixin-java-mp-demo-springmvc</url>
+    <url>https://github.com/gitrocyang/weixin-java-mp-demo-springmvc</url>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -84,6 +84,15 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+
+      <!--servlet-->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+        <scope>provided</scope>
+      </dependency>
+
     </dependencies>
 
     <build>

@@ -8,3 +8,5 @@
 classes/
 build/
 wx.properties
+/src/main/resources/wx.properties.template
+/src/main/webapp/MP_verify_ZRZp64i6szfsp0Jv.txt
