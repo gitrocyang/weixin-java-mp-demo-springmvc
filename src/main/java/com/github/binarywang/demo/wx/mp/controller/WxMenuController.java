@@ -1,5 +1,6 @@
 package com.github.binarywang.demo.wx.mp.controller;
 
+import me.chanjar.weixin.common.api.WxConsts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,13 +51,17 @@ public class WxMenuController implements WxMpMenuService {
     return this.wxService.getMenuService().menuCreate(menu);
   }
 
-  @GetMapping("/create")
+  @GetMapping("/createmymenu")
   public String menuCreateSample() throws WxErrorException {
+    String url = wxService.oauth2buildAuthorizationUrl("http://roc.t.maple-soft.com/wechat/api/oauth2callback",
+      WxConsts.OAuth2Scope.SNSAPI_USERINFO,
+      null);
     WxMenu menu = new WxMenu();
     WxMenuButton button1 = new WxMenuButton();
-    button1.setType(MenuButtonType.CLICK);
-    button1.setName("今日歌曲");
-    button1.setKey("V1001_TODAY_MUSIC");
+    button1.setType(MenuButtonType.VIEW);
+    button1.setName("打个招呼");
+    button1.setUrl(url);
+    //button1.setKey("V1001_TODAY_MUSIC");
 
 //        WxMenuButton button2 = new WxMenuButton();
 //        button2.setType(WxConsts.BUTTON_MINIPROGRAM);
@@ -65,12 +70,12 @@ public class WxMenuController implements WxMpMenuService {
 //        button2.setPagePath("pages/lunar/index.html");
 //        button2.setUrl("http://mp.weixin.qq.com");
 
-    WxMenuButton button3 = new WxMenuButton();
-    button3.setName("菜单");
+    /*WxMenuButton button3 = new WxMenuButton();
+    button3.setName("菜单");*/
 
     menu.getButtons().add(button1);
 //        menu.getButtons().add(button2);
-    menu.getButtons().add(button3);
+    /*menu.getButtons().add(button3);
 
     WxMenuButton button31 = new WxMenuButton();
     button31.setType(MenuButtonType.VIEW);
@@ -90,7 +95,7 @@ public class WxMenuController implements WxMpMenuService {
     button3.getSubButtons().add(button31);
     button3.getSubButtons().add(button32);
     button3.getSubButtons().add(button33);
-
+*/
     return this.wxService.getMenuService().menuCreate(menu);
   }
 

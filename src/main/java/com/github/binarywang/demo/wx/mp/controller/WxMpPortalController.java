@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Binary Wang
  */
 @RestController
-@RequestMapping("/wechat/portal")
+@RequestMapping("/wechat/portal.do")
 public class WxMpPortalController {
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
   

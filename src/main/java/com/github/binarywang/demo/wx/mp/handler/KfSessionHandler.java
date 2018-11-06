@@ -19,7 +19,8 @@ public class KfSessionHandler extends AbstractHandler {
                                   Map<String, Object> context, WxMpService wxMpService,
                                   WxSessionManager sessionManager) {
     //TODO 对会话做处理
-    return null;
+    WxMpXmlOutMessage message = WxMpXmlOutMessage.TEXT().content("aaa").toUser(wxMessage.getOpenId()).build();
+    return message;
   }
 
 }
