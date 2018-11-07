@@ -1,5 +1,6 @@
 package com.github.binarywang.demo.wx.mp.controller;
 
+import com.github.binarywang.demo.wx.mp.service.TulingService;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.bean.WxJsapiSignature;
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -30,6 +31,9 @@ public class WxApiController {
 
   @Autowired
   private WxMpService wxService;
+
+  @Autowired
+  private TulingService tlService;
 
   /*
   @Autowired
@@ -76,5 +80,11 @@ public class WxApiController {
     }
 
     return wxMpUser.toString();
+  }
+
+  @GetMapping("/talk")
+  public String getTalk(){
+    String rtn = tlService.talk("你好啊！","333994873");
+    return rtn;
   }
 }
